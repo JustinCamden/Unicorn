@@ -22,5 +22,8 @@ class UNICORN_API IHealthInterface
 
 public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combat")
-	bool LoseHealth(float HealthLost);
+	bool LoseHealth(float HealthLost, bool& bDied);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combat")
+	bool GainHealth(float HealthGained);
 };
