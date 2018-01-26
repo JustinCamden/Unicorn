@@ -20,13 +20,13 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	/** Current amount of resources. Infinite if 0 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetCurrentResource, Category = "Resources")
-	float CurrentResource;
-
 	/** Max amount of resources. Infinite if 0 */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetMaxResource, Category = "Resources")
 	float MaxResource;
+
+	/** Current amount of resources. Infinite if 0 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetCurrentResource, Category = "Resources")
+	float CurrentResource;
 
 public:	
 	// Called every frame
@@ -51,6 +51,10 @@ public:
 	/** Gets whether the current resource is depleted */
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Resources")
 	const bool IsDepleted();
+
+	/** Gets whether the current resource is equal to Max Resource */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Resources")
+	const bool IsAtMaxCapacity();
 
 	const float GetCurrentResource();
 	const float GetMaxResource();

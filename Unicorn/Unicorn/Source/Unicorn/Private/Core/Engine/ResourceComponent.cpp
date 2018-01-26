@@ -110,3 +110,8 @@ const bool UResourceComponent::IsDepleted()
 {
 	return (CurrentResource <= 0.0f);
 }
+
+const bool UResourceComponent::IsAtMaxCapacity()
+{
+	return (CurrentResource >= MaxResource && MaxResource > 0.0f);
+}
