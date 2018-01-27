@@ -115,3 +115,8 @@ const bool UResourceComponent::IsAtMaxCapacity()
 {
 	return (CurrentResource >= MaxResource && MaxResource > 0.0f);
 }
+
+const bool UResourceComponent::CanAfford(float Cost)
+{
+	return (Cost <= CurrentResource);
+}

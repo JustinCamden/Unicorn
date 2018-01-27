@@ -56,6 +56,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Resources")
 	const bool IsAtMaxCapacity();
 
+	/** Gets whether the current resource is equal to Max Resource */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Resources")
+	const bool CanAfford(float Cost);
+
 	const float GetCurrentResource();
 	const float GetMaxResource();
 };
