@@ -1,6 +1,7 @@
 // Copyright 2018 Team Unicorn All Rights Reserved
 
 #include "UnicornAIController.h"
+#include "UnicornCharacter.h"
 
 AUnicornAIController::AUnicornAIController(const FObjectInitializer& ObjectInitializer)
 {
@@ -10,12 +11,27 @@ AUnicornAIController::AUnicornAIController(const FObjectInitializer& ObjectIniti
 
 void AUnicornAIController::GetActorEyesViewPoint(FVector& out_Location, FRotator& out_Rotation) const
 {
+	// Vision component override
 	if (VisionComponent)
 	{
 		FTransform VisionTransform = VisionComponent->GetComponentTransform();
 		out_Location = VisionTransform.GetLocation();
 		out_Rotation = VisionTransform.Rotator();
 		return;
+	}
+	AUnicornCharacter* UnicornCharacter = Cast<AUnicornCharacter>(GetPawn());
+
+	// Default vision component from Unicorn Character
+	if (UnicornCharacter)
+	{
+		USceneComponent* CharVisionComp = UnicornCharacter->GetVisionComponent();
+		if (CharVisionComp)
+		{
+			FTransform VisionTransform = CharVisionComp->GetComponentTransform();
+			out_Location = VisionTransform.GetLocation();
+			out_Rotation = VisionTransform.Rotator();
+			return;
+		}
 	}
 
 	return Super::GetActorEyesViewPoint(out_Location, out_Rotation);
