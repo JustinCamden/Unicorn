@@ -1,0 +1,38 @@
+// Copyright 2018 Team Unicorn All Rights Reserved
+
+#include "UnicornCharacter.h"
+
+
+// Sets default values
+AUnicornCharacter::AUnicornCharacter()
+{
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+}
+
+// Called when the game starts or when spawned
+void AUnicornCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	
+}
+
+// Called every frame
+void AUnicornCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
+// Called to bind functionality to input
+void AUnicornCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+}
+
+USceneComponent* AUnicornCharacter::GetVisionComponent_Implementation() const
+{
+	return RootComponent;
+}
+
