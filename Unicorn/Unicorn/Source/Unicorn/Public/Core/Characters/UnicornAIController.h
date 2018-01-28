@@ -28,6 +28,34 @@ public:
 	virtual void GetActorEyesViewPoint(FVector& out_Location, FRotator& out_Rotation) const override;
 
 	/** Gets the aim location on target actor */
-	UFUNCTION(BlueprintCallable, Category = "AI|Vision")
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "AI|Vision")
 	FVector GetAimLocationOnActor(AActor* TargetActor) const;
+
+	/** Sets the target actor for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
+	void SetTargetActor(AActor* TargetActor);
+
+	/** Sets the passive state for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
+	void SetIsPassive(bool bIsPassive);
+
+	/** Sets the goal location for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
+	void SetGoalLocation(FVector GoalLocation);
+
+	/** Gets the goal location for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	const FVector GetGoalLocation();
+
+	/** Gets the target actor for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	AActor* GetTargetActor() const;
+
+	/** Gets Is Passive for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	const bool GetIsPassive();
+
+	/** Gets the controlled Unicorn Character */
+	UFUNCTION(BlueprintPure, Category = "AI")
+	class AUnicornCharacter* GetUnicornCharacter() const;
 };

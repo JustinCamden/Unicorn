@@ -2,6 +2,9 @@
 
 #include "UnicornAIController.h"
 #include "UnicornCharacter.h"
+#include "UnicornBBKeys.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
 
 AUnicornAIController::AUnicornAIController(const FObjectInitializer& ObjectInitializer)
 {
@@ -88,4 +91,65 @@ FVector AUnicornAIController::GetAimLocationOnActor(AActor* Actor) const
 	{
 		return FVector::ZeroVector;
 	}
+}
+
+void AUnicornAIController::SetGoalLocation(FVector GoalLocation)
+{
+	if (Blackboard)
+	{
+		Blackboard->SetValueAsVector(UUnicornBBKeys::GoalLocation(), GoalLocation);
+	}
+}
+
+void AUnicornAIController::SetIsPassive(bool bIsPassive)
+{
+	if (Blackboard)
+	{
+		Blackboard->SetValueAsBool(UUnicornBBKeys::IsPassive(),bIsPassive);
+	}
+}
+
+void AUnicornAIController::SetTargetActor(AActor* TargetActor)
+{
+	if (Blackboard)
+	{
+		Blackboard->SetValueAsObject(UUnicornBBKeys::TargetActor(), TargetActor);
+	}
+}
+
+const FVector AUnicornAIController::GetGoalLocation()
+{
+	if (Blackboard)
+	{
+		return (Blackboard->GetValueAsVector(UUnicornBBKeys::GoalLocation()));
+	}
+
+	return FVector::ZeroVector;
+}
+
+AActor* AUnicornAIController::GetTargetActor() const
+{
+	if (Blackboard)
+	{
+		return (Cast<AActor>(Blackboard->GetValueAsObject(UUnicornBBKeys::TargetActor())));
+	}
+
+	return nullptr;
+}
+
+const bool AUnicornAIController::GetIsPassive()
+{
+	if (Blackboard)
+	{
+		return (Blackboard->GetValueAsBool(UUnicornBBKeys::IsPassive()));
+	}
+
+	return false;
+}
+
+AUnicornCharacter* AUnicornAIController::GetUnicornCharacter() const
+{
+	AUnicornCharacter* UnicornCharacter = Cast<AUnicornCharacter>(GetPawn());
+	
+	return UnicornCharacter;
 }

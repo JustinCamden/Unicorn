@@ -10,7 +10,7 @@ UENUM(BlueprintType)
 enum class ETeam : uint8
 {
 	TE_Player	UMETA(DisplayName = "Player"),
-	TE_PlayerEnemi	UMETA(DisplayName = "PlayerEnemy")
+	TE_PlayerEnemy	UMETA(DisplayName = "PlayerEnemy")
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -31,7 +31,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	/** The team of this component and its owning actor */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
 	ETeam Team;
 
 	/** Gets whether the other actor has the same team as this component. Returns false if other actor does not implement a team component*/

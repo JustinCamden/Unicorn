@@ -16,3 +16,8 @@ const FName UUnicornMaterialParameters::FringeSize()
 {
 	return FName("FringeSize");
 }
+
+const FName UUnicornMaterialParameters::Color()
+{
+	return FName("Color");
+}

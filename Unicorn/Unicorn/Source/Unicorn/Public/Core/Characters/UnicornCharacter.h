@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "TeamComponent.h"
 #include "UnicornCharacter.generated.h"
 
 UCLASS()
@@ -19,6 +20,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	/** Team of this character. Helps allies, harms enemies. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetTeam, Category = "Config")
+	ETeam Team;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -30,4 +34,12 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "AI|Vision")
 	USceneComponent* GetVisionComponent() const;
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Team", meta = (AllowPrivateAccess = "true"))
+	UTeamComponent* TeamComponent;
+
+	/** Setter for Character's Team. Automatically updates Team Component */
+	UFUNCTION(BlueprintCallable, Category = "Resources")
+	void SetTeam(ETeam NewTeam);
+
+
 };

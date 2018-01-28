@@ -8,6 +8,11 @@ AUnicornCharacter::AUnicornCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	// Initialize team component
+	TeamComponent = CreateDefaultSubobject<UTeamComponent>("TeamComponent");
+	AddOwnedComponent(TeamComponent);
+	SetTeam(ETeam::TE_PlayerEnemy);
 }
 
 // Called when the game starts or when spawned
@@ -35,4 +40,11 @@ USceneComponent* AUnicornCharacter::GetVisionComponent_Implementation() const
 {
 	return RootComponent;
 }
+
+void AUnicornCharacter::SetTeam(ETeam NewTeam)
+{
+	Team = NewTeam;
+	TeamComponent->Team = NewTeam;
+}
+
 

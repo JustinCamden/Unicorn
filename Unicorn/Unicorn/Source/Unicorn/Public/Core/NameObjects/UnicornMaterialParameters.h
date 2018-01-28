@@ -14,6 +14,7 @@ class UNICORN_API UUnicornMaterialParameters : public UObject
 {
 	GENERATED_BODY()
 	
+public:
 	UFUNCTION(BlueprintPure, Category = "Material Parameters")
 	static const FName Opacity();
 
@@ -23,4 +24,6 @@ class UNICORN_API UUnicornMaterialParameters : public UObject
 	UFUNCTION(BlueprintPure, Category = "Material Parameters")
 	static const FName FringeSize();
 	
+	UFUNCTION(BlueprintPure, Category = "Material Parameters")
+	static const FName Color();
 };
