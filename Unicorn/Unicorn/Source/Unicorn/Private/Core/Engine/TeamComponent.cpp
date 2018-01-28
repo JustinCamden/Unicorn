@@ -34,7 +34,7 @@ void UTeamComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	// ...
 }
 
-bool UTeamComponent::IsSameTeam(AActor* OtherActor)
+const bool UTeamComponent::IsSameTeam(AActor* OtherActor)
 {
 	TArray<UTeamComponent*> TeamComps;
 	OtherActor->GetComponents<UTeamComponent>(TeamComps);

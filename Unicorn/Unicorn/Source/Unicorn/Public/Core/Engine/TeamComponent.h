@@ -35,7 +35,7 @@ public:
 	ETeam Team;
 
 	/** Gets whether the other actor has the same team as this component. Returns false if other actor does not implement a team component*/
-	UFUNCTION(BlueprintCallable, Category = "Team")
-	bool IsSameTeam(AActor* OtherActor);
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Team")
+	const bool IsSameTeam(AActor* OtherActor);
 
 };
