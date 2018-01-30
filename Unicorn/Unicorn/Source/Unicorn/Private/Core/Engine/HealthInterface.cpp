@@ -8,4 +8,12 @@ UHealthInterface::UHealthInterface(const FObjectInitializer& ObjectInitializer)
 
 }
 
+bool IHealthInterface::LoseHealth_Implementation(float HealthLost, bool& bDied)
+{
+	return false;
+}
 
+bool IHealthInterface::GainHealth_Implementation(float HealthGained)
+{
+	return false;
+}
