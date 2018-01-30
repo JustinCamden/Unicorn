@@ -21,9 +21,9 @@ class UNICORN_API IHealthInterface
 	GENERATED_IINTERFACE_BODY()
 
 public:
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combat")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Combat")
 	bool LoseHealth(float HealthLost, bool& bDied);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combat")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Combat")
 	bool GainHealth(float HealthGained);
 };

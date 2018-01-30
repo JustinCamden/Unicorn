@@ -1,6 +1,7 @@
 // Copyright 2018 Team Unicorn All Rights Reserved
 
 #include "UnicornCharacter.h"
+#include "ResourceComponent.h"
 
 
 // Sets default values
@@ -9,10 +10,13 @@ AUnicornCharacter::AUnicornCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	// Initialize team component
+	// Initialize components
 	TeamComponent = CreateDefaultSubobject<UTeamComponent>("TeamComponent");
 	AddOwnedComponent(TeamComponent);
 	SetTeam(ETeam::TE_PlayerEnemy);
+
+	HealthComponent = CreateDefaultSubobject<UResourceComponent>("HealthComponent");
+	AddOwnedComponent(HealthComponent);
 }
 
 // Called when the game starts or when spawned
@@ -45,6 +49,18 @@ void AUnicornCharacter::SetTeam(ETeam NewTeam)
 {
 	Team = NewTeam;
 	TeamComponent->Team = NewTeam;
+}
+
+bool AUnicornCharacter::LoseHealth_Implementation(float HealthLost, bool& bDied)
+{
+	HealthComponent->LoseResource(HealthLost, bDead);
+	return bDead;
+}
+
+bool AUnicornCharacter::GainHealth_Implementation(float HealthGained)
+{
+	HealthComponent->GainResource(HealthGained);
+	return true;
 }
 
 
