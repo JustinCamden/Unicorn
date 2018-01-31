@@ -54,7 +54,9 @@ void AUnicornCharacter::SetTeam(ETeam NewTeam)
 bool AUnicornCharacter::LoseHealth_Implementation(float HealthLost, bool& bDied)
 {
 	HealthComponent->LoseResource(HealthLost, bDead);
-	return bDead;
+	bDied = bDead;
+
+	return true;
 }
 
 bool AUnicornCharacter::GainHealth_Implementation(float HealthGained)
