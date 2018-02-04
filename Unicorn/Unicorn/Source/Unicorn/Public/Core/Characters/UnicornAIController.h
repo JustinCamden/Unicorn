@@ -24,9 +24,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
 	float VRAimLocationHeightMultiplier;
 
-	/** Override for vision location and rotation */
+	/** How long we should wait when we are on a path before we try to find a new path */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
 	float TimeOnPathUntilRepath;
+
+	/** How long we want to wait during an attack before abandoning it */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
+	float AttackTimoutTime;
 
 	/** How close counts as melee range */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")

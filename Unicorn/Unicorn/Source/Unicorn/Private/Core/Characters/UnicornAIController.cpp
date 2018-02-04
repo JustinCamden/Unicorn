@@ -12,6 +12,7 @@ AUnicornAIController::AUnicornAIController(const FObjectInitializer& ObjectIniti
 	VRAimLocationHeightMultiplier = 0.9f;
 	TimeOnPathUntilRepath = 15.0f;
 	MeleeRange = 160.0f;
+	AttackTimoutTime = 10.0f;
 }
 
 void AUnicornAIController::GetActorEyesViewPoint(FVector& out_Location, FRotator& out_Rotation) const
