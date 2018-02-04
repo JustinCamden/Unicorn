@@ -74,4 +74,12 @@ public:
 	/** Gets the target actor for this AI Controller's Blackboard */
 	UFUNCTION(BlueprintPure, Category = "AI|Combat")
 	const bool IsWithinMeleeRange(AActor* Actor);
+
+	/** Gets the AI Manager spawned by the Game Mode */
+	UFUNCTION(BlueprintPure, Category = "AI")
+	class AUnicornAIManager* GetAIManager() const;
+
+	/** Overridable function to be called when player teleports */
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Combat")
+	void OnTargetTeleported();
 };

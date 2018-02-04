@@ -3,6 +3,9 @@
 #include "UnicornAIController.h"
 #include "UnicornCharacter.h"
 #include "UnicornBBKeys.h"
+#include "UnicornGameModeBase.h"
+#include "UnicornAIManager.h"
+#include "GameFramework/GameModeBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
 
@@ -171,4 +174,22 @@ const bool AUnicornAIController::IsWithinMeleeRange(AActor* Actor)
 		return (Distance.Size() <= MeleeRange);
 	}
 	return false;
+}
+
+AUnicornAIManager* AUnicornAIController::GetAIManager() const
+{
+	AUnicornGameModeBase* UnicornGameMode = Cast<AUnicornGameModeBase>(GetWorld()->GetAuthGameMode());
+	if (UnicornGameMode)
+	{
+		return (UnicornGameMode->GetAIManager());
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
+void AUnicornAIController::OnTargetTeleported_Implementation()
+{
+
 }
