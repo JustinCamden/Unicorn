@@ -50,6 +50,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	bool bDead;
 
+
+	/** Overridable function automatically called when the character loses all health */
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Combat")
+	void OnDeath();
+
 	bool LoseHealth_Implementation(float HealthLost, bool& bDied) override;
 	bool GainHealth_Implementation(float HealthGained) override;
 };
