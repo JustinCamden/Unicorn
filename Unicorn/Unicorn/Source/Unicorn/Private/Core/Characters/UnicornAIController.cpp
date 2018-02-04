@@ -10,6 +10,8 @@ AUnicornAIController::AUnicornAIController(const FObjectInitializer& ObjectIniti
 {
 	VisionComponent = nullptr;
 	VRAimLocationHeightMultiplier = 0.9f;
+	TimeOnPathUntilRepath = 15.0f;
+	MeleeRange = 160.0f;
 }
 
 void AUnicornAIController::GetActorEyesViewPoint(FVector& out_Location, FRotator& out_Rotation) const
@@ -152,4 +154,20 @@ AUnicornCharacter* AUnicornAIController::GetUnicornCharacter() const
 	AUnicornCharacter* UnicornCharacter = Cast<AUnicornCharacter>(GetPawn());
 	
 	return UnicornCharacter;
+}
+
+const bool AUnicornAIController::IsWithinMeleeRange(AActor* Actor)
+{
+	if (Actor)
+	{
+		FVector TargetLocation = GetAimLocationOnActor(Actor);
+		TargetLocation.Z = 0.0f;
+
+		FVector CurrentLocation = GetPawn()->GetActorLocation();
+		CurrentLocation.Z = 0.0f;
+
+		FVector Distance = (TargetLocation - CurrentLocation);
+		return (Distance.Size() <= MeleeRange);
+	}
+	return false;
 }
