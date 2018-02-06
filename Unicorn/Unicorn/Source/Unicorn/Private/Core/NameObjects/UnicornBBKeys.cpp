@@ -16,3 +16,13 @@ const FName UUnicornBBKeys::IsPassive()
 {
 	return FName("bIsPassive");
 }
+
+const FName UUnicornBBKeys::TargetRecentlyTeleported()
+{
+	return FName("bTargetRecentlyTeleported");
+}
+
+const FName UUnicornBBKeys::Stunned()
+{
+	return FName("bStunned");
+}

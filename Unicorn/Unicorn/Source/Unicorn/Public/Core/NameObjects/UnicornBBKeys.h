@@ -23,4 +23,10 @@ public:
 	
 	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
 	static const FName GoalLocation();
+
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	static const FName TargetRecentlyTeleported();
+
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	static const FName Stunned();
 };

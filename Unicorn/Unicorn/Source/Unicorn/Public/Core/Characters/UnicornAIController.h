@@ -47,9 +47,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
 	void SetTargetActor(AActor* TargetActor);
 
+	/** Gets the target actor for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	AActor* GetTargetActor() const;
+
 	/** Sets the passive state for this AI Controller's Blackboard */
 	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
 	void SetIsPassive(bool bIsPassive);
+
+	/** Gets Is Passive for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	const bool GetIsPassive();
 
 	/** Sets the goal location for this AI Controller's Blackboard */
 	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
@@ -59,13 +67,21 @@ public:
 	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
 	const FVector GetGoalLocation();
 
-	/** Gets the target actor for this AI Controller's Blackboard */
-	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
-	AActor* GetTargetActor() const;
+	/** Sets the target recently teleported key for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
+	void SetTargetRecentlyTeleported(bool bTargetRecentlyTeleported);
 
-	/** Gets Is Passive for this AI Controller's Blackboard */
+	/** Gets the target recently teleported key for this AI Controller's Blackboard */
 	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
-	const bool GetIsPassive();
+	const bool GetTargetRecentlyTeleported();
+
+	/** Sets the stunned key for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintCallable, Category = "AI|Blackboard Keys")
+	void SetStunned(bool bStunned);
+
+	/** Gets the stunned key for this AI Controller's Blackboard */
+	UFUNCTION(BlueprintPure, Category = "AI|Blackboard Keys")
+	const bool GetStunned();
 
 	/** Gets the controlled Unicorn Character */
 	UFUNCTION(BlueprintPure, Category = "AI")

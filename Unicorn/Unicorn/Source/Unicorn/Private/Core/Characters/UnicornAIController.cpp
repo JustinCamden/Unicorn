@@ -193,3 +193,43 @@ void AUnicornAIController::OnTargetTeleported_Implementation()
 {
 
 }
+
+void AUnicornAIController::SetTargetRecentlyTeleported(bool bTargetRecentlyTeleported)
+{
+	if (Blackboard)
+	{
+		Blackboard->SetValueAsBool(UUnicornBBKeys::TargetRecentlyTeleported(), bTargetRecentlyTeleported);
+	}
+}
+
+const bool AUnicornAIController::GetTargetRecentlyTeleported()
+{
+	if (Blackboard)
+	{
+		return Blackboard->GetValueAsBool(UUnicornBBKeys::TargetRecentlyTeleported());
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void AUnicornAIController::SetStunned(bool bStunned)
+{
+	if (Blackboard)
+	{
+		Blackboard->SetValueAsBool(UUnicornBBKeys::Stunned(), bStunned);
+	}
+}
+
+const bool AUnicornAIController::GetStunned()
+{
+	if (Blackboard)
+	{
+		return Blackboard->GetValueAsBool(UUnicornBBKeys::Stunned());
+	}
+	else
+	{
+		return false;
+	}
+}
