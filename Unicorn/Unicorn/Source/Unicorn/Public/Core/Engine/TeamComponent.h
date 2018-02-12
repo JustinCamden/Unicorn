@@ -34,8 +34,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
 	ETeam Team;
 
+	/** The enemy team of this component and its owning actor */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
+	ETeam EnemyTeam;
+
 	/** Gets whether the other actor has the same team as this component. Returns false if other actor does not implement a team component*/
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Team")
 	const bool IsSameTeam(AActor* OtherActor);
+
+	/** Gets whether the other actor has the team designated as the enemy of this component. Returns false if other actor does not implement a team component*/
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Team")
+	const bool IsEnemyTeam(AActor* OtherActor);
 
 };

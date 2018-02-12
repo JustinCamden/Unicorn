@@ -13,6 +13,7 @@ UTeamComponent::UTeamComponent()
 
 	// ...
 	Team = ETeam::TE_Player;
+	EnemyTeam = ETeam::TE_PlayerEnemy;
 }
 
 
@@ -43,6 +44,21 @@ const bool UTeamComponent::IsSameTeam(AActor* OtherActor)
 		if (TeamComps[0])
 		{
 			return TeamComps[0]->Team == Team;
+		}
+	}
+
+	return false;
+}
+
+const bool UTeamComponent::IsEnemyTeam(AActor* OtherActor)
+{
+	TArray<UTeamComponent*> TeamComps;
+	OtherActor->GetComponents<UTeamComponent>(TeamComps);
+	if (TeamComps.Num() > 0)
+	{
+		if (TeamComps[0])
+		{
+			return TeamComps[0]->Team == EnemyTeam;
 		}
 	}
 

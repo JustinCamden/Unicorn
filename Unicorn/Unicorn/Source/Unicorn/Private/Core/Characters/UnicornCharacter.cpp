@@ -14,6 +14,7 @@ AUnicornCharacter::AUnicornCharacter()
 	TeamComponent = CreateDefaultSubobject<UTeamComponent>("TeamComponent");
 	AddOwnedComponent(TeamComponent);
 	SetTeam(ETeam::TE_PlayerEnemy);
+	SetEnemyTeam(ETeam::TE_Player);
 
 	HealthComponent = CreateDefaultSubobject<UResourceComponent>("HealthComponent");
 	AddOwnedComponent(HealthComponent);
@@ -49,6 +50,12 @@ void AUnicornCharacter::SetTeam(ETeam NewTeam)
 {
 	Team = NewTeam;
 	TeamComponent->Team = NewTeam;
+}
+
+void AUnicornCharacter::SetEnemyTeam(ETeam NewTeam)
+{
+	EnemyTeam = NewTeam;
+	TeamComponent->EnemyTeam = NewTeam;
 }
 
 bool AUnicornCharacter::LoseHealth_Implementation(float HealthLost, bool& bDied)

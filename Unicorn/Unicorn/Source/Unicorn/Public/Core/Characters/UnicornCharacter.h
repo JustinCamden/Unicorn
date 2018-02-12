@@ -25,6 +25,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetTeam, Category = "Config")
 	ETeam Team;
 
+	/** Team of this character's enemies. Helps allies, harms enemies. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, BlueprintSetter = SetEnemyTeam, Category = "Config")
+	ETeam EnemyTeam;
+
 	/** Health of this character */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	class UResourceComponent* HealthComponent;
@@ -45,6 +49,10 @@ public:
 	/** Setter for Character's Team. Automatically updates Team Component */
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void SetTeam(ETeam NewTeam);
+
+	/** Setter for Character's Enemy Team. Automatically updates Team Component */
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+	void SetEnemyTeam(ETeam NewTeam);
 	
 	/** Whether this character is currently dead */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
