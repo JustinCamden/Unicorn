@@ -1,7 +1,7 @@
 // Copyright 2018 Team Unicorn All Rights Reserved
 
-#include "VRAIController.h"
 #include "UnicornFunctionLibrary.h"
+#include "VRAIController.h"
 
 
 FVector UUnicornFunctionLibrary::GetAimLocationOnActor(AActor* Actor, float VRAimLocationHeightMultiplier)
