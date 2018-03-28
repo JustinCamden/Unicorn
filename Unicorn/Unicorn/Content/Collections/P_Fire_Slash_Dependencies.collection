@@ -7,5 +7,6 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Game/FireBuilder/Materials/M_FlameDisperse1.M_FlameDisperse1
 /Game/FireBuilder/Materials/M_HeatDistortion1.M_HeatDistortion1
 /Game/FireBuilder/Materials/M_SmokePuff1.M_SmokePuff1
+/Game/FireBuilder/Particles/P_FireTrail.P_FireTrail
 /Game/OldTown/Maps/Demo_Night.Demo_Night
 /Game/Unicorn/Spells/BP_FireSideSlash.BP_FireSideSlash
