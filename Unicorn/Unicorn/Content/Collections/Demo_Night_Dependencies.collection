@@ -7,6 +7,7 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial
 /Engine/MapTemplates/daylight.daylight
 /Engine/MapTemplates/Sky/SunsetAmbientCubemap.SunsetAmbientCubemap
+/Game/FireBuilder/Particles/P_FireTrail.P_FireTrail
 /Game/OldTown/Blueprints/Assets/M_LightStage_Arrows.M_LightStage_Arrows
 /Game/OldTown/Blueprints/Assets/M_LightStage_Skybox_Black.M_LightStage_Skybox_Black
 /Game/OldTown/Blueprints/BP_LightStudio.BP_LightStudio
