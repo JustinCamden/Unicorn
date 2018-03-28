@@ -14,6 +14,7 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Game/OldTown/Blueprints/PowerLine.PowerLine
 /Game/OldTown/Blueprints/Spotlight.Spotlight
 /Game/OldTown/Blueprints/TrafficLight.TrafficLight
+/Game/OldTown/Maps/Demo_Night.Demo_Night
 /Game/OldTown/Maps/Demo_Night_BuiltData.Demo_Night_BuiltData
 /Game/OldTown/Materials/-TriPlanar_Standard.-TriPlanar_Standard
 /Game/OldTown/Materials/Awning_Inst_Blue.Awning_Inst_Blue
