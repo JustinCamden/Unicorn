@@ -185,8 +185,8 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Game/Unicorn/Characters/UnicornCharacter/M_CapsuleMaterial.M_CapsuleMaterial
 /Game/Unicorn/Core/Engine/BP_StunComponent.BP_StunComponent
 /Game/Unicorn/Core/Engine/BP_UnicornGameMode.BP_UnicornGameMode
-/Game/Unicorn/ParticleAssets/Demo_Night.Demo_Night
 /Game/Unicorn/ParticleAssets/P_FireTrail.P_FireTrail
+/Game/Unicorn/Scenes/Demo_Night.Demo_Night
 /Script/Foliage.Foliage
 /Script/Landscape.Landscape
 /Script/Unicorn.Unicorn
