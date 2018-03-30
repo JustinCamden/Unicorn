@@ -7,7 +7,6 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial
 /Engine/MapTemplates/daylight.daylight
 /Engine/MapTemplates/Sky/SunsetAmbientCubemap.SunsetAmbientCubemap
-/Game/FireBuilder/Particles/P_FireTrail.P_FireTrail
 /Game/OldTown/Blueprints/Assets/M_LightStage_Arrows.M_LightStage_Arrows
 /Game/OldTown/Blueprints/Assets/M_LightStage_Skybox_Black.M_LightStage_Skybox_Black
 /Game/OldTown/Blueprints/BP_LightStudio.BP_LightStudio
@@ -15,7 +14,6 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Game/OldTown/Blueprints/PowerLine.PowerLine
 /Game/OldTown/Blueprints/Spotlight.Spotlight
 /Game/OldTown/Blueprints/TrafficLight.TrafficLight
-/Game/OldTown/Maps/Demo_Night.Demo_Night
 /Game/OldTown/Maps/Demo_Night_BuiltData.Demo_Night_BuiltData
 /Game/OldTown/Materials/-TriPlanar_Standard.-TriPlanar_Standard
 /Game/OldTown/Materials/Awning_Inst_Blue.Awning_Inst_Blue
@@ -187,6 +185,8 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 /Game/Unicorn/Characters/UnicornCharacter/M_CapsuleMaterial.M_CapsuleMaterial
 /Game/Unicorn/Core/Engine/BP_StunComponent.BP_StunComponent
 /Game/Unicorn/Core/Engine/BP_UnicornGameMode.BP_UnicornGameMode
+/Game/Unicorn/ParticleAssets/Demo_Night.Demo_Night
+/Game/Unicorn/ParticleAssets/P_FireTrail.P_FireTrail
 /Script/Foliage.Foliage
 /Script/Landscape.Landscape
 /Script/Unicorn.Unicorn
